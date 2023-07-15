@@ -11,9 +11,14 @@ enum ProductTypeEnum: string
     public static function getTypes(): array
     {
         return [
-            self::DVD,
-            self::BOOK,
-            self::FURNITURE,
+            self::DVD->value,
+            self::BOOK->value,
+            self::FURNITURE->value,
         ];
+    }
+
+    public static function getRules(): string
+    {
+        return 'enum:' . implode(',', self::getTypes());
     }
 }

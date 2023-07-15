@@ -1,4 +1,7 @@
 <?php
+
+use App\Enum\ProductTypeEnum;
+
 require __DIR__ . '/../vendor/autoload.php';
 
 // Load environment variables

@@ -2,7 +2,7 @@
 
 namespace Martian\Scandi\Enums;
 
-enum StatusCode: int
+enum StatusCodeEnum: int
 {
     case OK = 200;
     case CREATED = 201;

@@ -2,6 +2,7 @@
 
 use Martian\Scandi\Classes\Config;
 use Martian\Scandi\Classes\Env;
+use Martian\Scandi\Classes\Validator;
 
 function env($key, $default = null)
 {
@@ -35,4 +36,9 @@ function url($url, $params = [])
         $url .= '?' . http_build_query($params);
     }
     return $url;
+}
+
+function validator(array $data, array $rules)
+{
+    return (new Validator($data, $rules));
 }
