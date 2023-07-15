@@ -3,8 +3,9 @@
 namespace Martian\Scandi\Abstracts;
 
 use Martian\Scandi\Enums\StatusCodeEnum;
+use Martian\Scandi\Interfaces\RequestInterface;
 
-class BaseRequest
+abstract class BaseRequest implements RequestInterface
 {
     protected $requestData;
 
@@ -63,4 +64,6 @@ class BaseRequest
             return $validator->validated();
         }
     }
+
+    abstract public function rules();
 }
