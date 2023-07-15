@@ -1,0 +1,33 @@
+{
+    "name": "martian/scandi",
+    "description": "Scandiweb Junior Developer Test",
+    "type": "project",
+    "require": {
+        "vlucas/phpdotenv": "^5.5",
+        "erickfirmo/router": "^1.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.2"
+    },
+    "license": "MIT",
+    "files": [
+        "helpers.php"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Martian\\Scandi\\": "src/",
+            "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Endurance, the Martian",
+            "email": "afriviral@gmail.com"
+        }
+    ]
+}
