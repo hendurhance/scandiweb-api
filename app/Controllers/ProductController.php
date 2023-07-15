@@ -2,10 +2,14 @@
 
 namespace App\Controllers;
 
-class ProductController
+use App\Models\Product;
+use Martian\Scandi\Abstracts\BaseController;
+
+class ProductController extends BaseController
 {
     public function index()
     {
-        echo config('app.name');
+        $products = (new Product())->all();
+        return $this->success('Products retrieved successfully', $products);
     }
 }

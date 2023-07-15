@@ -13,10 +13,10 @@ function config($key, $default = null)
     return Config::get($key, $default);
 }
 
-function json(bool $status, string $message, $data = null, $code = 200)
+function json(bool $status, string $message, $data = null, $statusCode = 200)
 {
     header('Content-Type: application/json');
-    http_response_code($code);
+    http_response_code($statusCode);
     $response = [
         'status' => $status ? 'success' : 'error',
         'message' => $message,

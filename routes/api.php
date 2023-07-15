@@ -11,7 +11,7 @@ use App\Controllers\ProductController;
 
 $router->get('/api', ApplicationController::class, 'index', 'api.index');
 
-$router->get('/products', ProductController::class, 'index', 'api.products.index');
+$router->get('/api/products', ProductController::class, 'index', 'api.products.index');
 
 /**
  * Not found route
