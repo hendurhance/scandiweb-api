@@ -15,19 +15,4 @@ abstract class BaseController implements ControllerInterface
     {
         return json($success, $message, $data, $statusCode);
     }
-
-    public function validate(array $data, array $rules)
-    {
-        // $validator = validator($data, $rules);
-
-        // if ($validator->fails()) {
-        //     $errors = $validator->errors()->toArray();
-
-        //     $message = array_values($errors)[0][0];
-
-        //     return $this->error(false, $message, $errors);
-        // }
-
-        // return true;
-    }
 }
