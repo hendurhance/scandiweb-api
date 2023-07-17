@@ -19,6 +19,6 @@ enum ProductTypeEnum: string
 
     public static function getRules(): string
     {
-        return 'enum:' . implode(',', self::getTypes());
+        return 'in:' . implode(',', self::getTypes());
     }
 }

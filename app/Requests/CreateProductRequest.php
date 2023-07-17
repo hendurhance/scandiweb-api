@@ -19,8 +19,8 @@ class CreateProductRequest extends BaseRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:255',
-            'sku' => 'required|string|max:255',
+            'name' => 'required|max:255',
+            'sku' => 'required|max:255',
             'price' => 'required|numeric|min:1',
             'type' => 'required|' . ProductTypeEnum::getRules(),
             'size' => 'required_if:type,' . ProductTypeEnum::DVD->value . '|numeric|max:255',

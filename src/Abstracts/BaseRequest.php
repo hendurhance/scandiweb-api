@@ -58,10 +58,11 @@ abstract class BaseRequest implements RequestInterface
     public function validated()
     {
         $validator = validator($this->requestData, $this->rules);
-        if (!$validator->validate()) {
-            return json(false, 'Validation failed', $validator->errors(), StatusCodeEnum::BAD_REQUEST->value);
+        $validator->validate();
+        if ($validator->fails()) {
+            return json(false, 'Validation failed', $validator->errors()->toArray(), StatusCodeEnum::BAD_REQUEST->value);
         } else {
-            return $validator->validated();
+            return $validator->getValidatedData();
         }
     }
 

@@ -2,7 +2,7 @@
 
 use Martian\Scandi\Classes\Config;
 use Martian\Scandi\Classes\Env;
-use Martian\Scandi\Classes\Validator;
+use Rakit\Validation\Validator;
 
 function env($key, $default = null)
 {
@@ -40,5 +40,5 @@ function url($url, $params = [])
 
 function validator(array $data, array $rules)
 {
-    return (new Validator($data, $rules));
+    return (new Validator())->make($data, $rules);
 }
