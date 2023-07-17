@@ -1,12 +1,17 @@
 <?php
 
-use App\Enum\ProductTypeEnum;
+use Martian\Scandi\Classes\Router;
+use Martian\Scandi\Enums\StatusCodeEnum;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-// Load environment variables
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/..');
-$dotenv->load();
+set_error_handler(function ($severity, $message, $file, $line) {
+    json(false, $message, [
+        'severity' => $severity,
+        'file' => $file,
+        'line' => $line
+    ], StatusCodeEnum::INTERNAL_SERVER_ERROR->value);
+});
 
 // Load helper functions
 require __DIR__ . '/../app/helpers.php';
@@ -16,9 +21,9 @@ require __DIR__ . '/../config/database.php';
 require __DIR__ . '/../config/app.php';
 
 // Create Router instance
-$router = new \ErickFirmo\Router;
+$router = new Router;
 
 // Load routes
 require __DIR__ . '/../routes/api.php';
 
-$router->run();
+$router->handleRequest();

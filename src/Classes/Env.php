@@ -2,8 +2,6 @@
 
 namespace Martian\Scandi\Classes;
 
-use Dotenv\Dotenv;
-
 class Env
 {
     /**
@@ -15,9 +13,28 @@ class Env
      */
     public static function get($key, $default = null)
     {
-        $dotenv = Dotenv::createImmutable(__DIR__.'/../../');
-        $dotenv->load();
+        $envFilePath = __DIR__ . '/../../.env';
 
-        return $_ENV[$key] ?? $default;
+        if (file_exists($envFilePath)) {
+            $envContent = file_get_contents($envFilePath);
+            $envLines = explode("\n", $envContent);
+            $envVariables = [];
+
+            foreach ($envLines as $line) {
+                $line = trim($line);
+
+                // Skip empty lines and comments
+                if ($line === '' || strpos($line, '#') === 0) {
+                    continue;
+                }
+
+                $parts = explode('=', $line, 2);
+                $envVariables[$parts[0]] = isset($parts[1]) ? $parts[1] : '';
+            }
+            
+            return $envVariables[$key] ?? $default;
+        }
+
+        return $default;
     }
 }

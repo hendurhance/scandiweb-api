@@ -12,5 +12,7 @@ interface ModelInterface
 
     public function update($id, $data);
 
+    public function where($column, $value);
+
     public function delete(array $ids);
 }

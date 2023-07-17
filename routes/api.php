@@ -6,19 +6,21 @@ use App\Controllers\ProductController;
 /**
  * Application routes
  * 
- * @var \ErickFirmo\Router $router
+ * @var \Martian\Scandi\Classes\Router $router
  */
 
-$router->get('/api', ApplicationController::class, 'index', 'api.index');
+$router->addRoute('GET', '/api', function () {
+    return (new ApplicationController())->index();
+});
 
-$router->get('/api/products', ProductController::class, 'index', 'api.products.index');
+$router->addRoute('GET', '/api/products', function () {
+    return (new ProductController())->index();
+});
 
-$router->post('/api/products/store', ProductController::class, 'store', 'api.products.store');
+$router->addRoute('POST', '/api/products/store', function () {
+    return (new ProductController())->store();
+});
 
-$router->delete('/api/products/delete', ProductController::class, 'destroy', 'api.products.destroy');
-
-
-/**
- * Not found route
- */
-$router->notFoundView(__DIR__ . '/../view/errors/404.php');
+$router->addRoute('DELETE', '/api/delete', function () {
+    return (new ProductController())->destroy();
+});

@@ -66,6 +66,14 @@ abstract class BaseModel implements ModelInterface
         return $this->find($id);
     }
 
+    public function where($column, $value)
+    {
+        $query = $this->connection->prepare("SELECT * FROM {$this->table} WHERE {$column} = :value");
+        $query->execute(['value' => $value]);
+
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function delete(array $ids)
     {
         $placeholders = implode(', ', array_fill(0, count($ids), '?'));
@@ -74,5 +82,5 @@ abstract class BaseModel implements ModelInterface
         $query->execute($ids);
 
         return $query->rowCount();
-    }    
+    }  
 }

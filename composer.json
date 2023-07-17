@@ -3,8 +3,6 @@
     "description": "Scandiweb Junior Developer Test",
     "type": "project",
     "require": {
-        "vlucas/phpdotenv": "^5.5",
-        "erickfirmo/router": "^1.1",
         "rakit/validation": "^1.4"
     },
     "require-dev": {
