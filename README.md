@@ -32,10 +32,50 @@ php -S localhost:8000 -t public
 
 
 ## Usage
+### API Endpoints
+| Method | Endpoint | Description | Parameters | Body | Response |
+| --- | --- | --- | --- | --- | --- |
+| GET | /api | Health check | - | - | `{"status":"success","message":"Welcome to Scandi API","data":{"name":"Scandiweb","version":"1.0.0"}}` |
+| GET | /api/products | Get all products | - | - | `{"status":"success","message":"Products retrieved successfully","data":[{"sku":"SKU001","name":"Product 1","price":10,"type":"book","weight":2.85},{"sku":"SKU002","name":"Product 2","price":15,"type":"dvd","size":12}]}` |
+| POST | /api/products/store | Create a new product | - | `{"sku":"SKU003","name":"Product 3","price":20,"type":"furniture","height":10,"width":20,"length":30}` | `{"status":"success","message":"Product created successfully"}` |
+| DELETE | /api/products/delete | Delete a product | `?sku=SKU003,SKU004` | - | `{"status":"success","message":"Product deleted successfully"}` |
 
 ## Configuration
+### Database
+The database configuration can be found in the `.env` file or in the `config/database.php` file. The default configuration is as follows:
+```dotenv
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=scandiweb
+DB_USERNAME=root
+DB_PASSWORD=root
+```
+
+### Application
+The application configuration can be found in the `.env` file. The default configuration is as follows:
+```dotenv
+APP_NAME=Scandiweb
+APP_VERSION=1.0.0
+APP_URL=http://localhost:8000
+```
 
 ## Development
+### Architecture
+The application follows the MC (Model-Controller) architecture. The `public/index.php` file is the entry point of the application.
+- `app/Controllers` - Contains the application controllers
+- `app/Enums` - Contains the application enums
+- `app/Factories` - Contains the application factories for resolving Product types
+- `app/Models` - Contains the application models
+- `app/Repositories` - Contains the application repositories
+- `app/Requests` - Contains the application requests for validating requests
+- `app/Resources` - Contains the application resources for formatting responses
+- `app/helpers.php` - Contains the application helper functions
+- `config` - Contains the application configuration files
+- `database` - Contains the database migrations and seeds file which is SQL files
+- `postman` - Contains the Postman collection and environment files
+- `public` - Contains the application entry point
+- `routes` - Contains the application routes
+- `src` - Contains the application base classes and interfaces
 
 ## Testing
 

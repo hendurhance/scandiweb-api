@@ -2,13 +2,9 @@
 
 namespace App\Controllers;
 
-use App\Enum\ProductTypeEnum;
-use App\Factories\ProductFactory;
-use App\Models\Product;
 use App\Repositories\ProductRepository;
 use App\Requests\CreateProductRequest;
 use App\Requests\DeleteProductRequest;
-use App\Resources\ProductResource;
 use Martian\Scandi\Abstracts\BaseController;
 
 class ProductController extends BaseController

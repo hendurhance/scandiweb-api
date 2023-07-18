@@ -1,0 +1,405 @@
+{
+	"info": {
+		"_postman_id": "9d61228f-fd2f-419d-87b2-bf18cc2ebb23",
+		"name": "Scandiweb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12014982",
+		"_collection_link": "https://biocatlog.postman.co/workspace/My-Workspace~4b428b2f-348e-4b27-8182-be03a0fabfe9/collection/12014982-9d61228f-fd2f-419d-87b2-bf18cc2ebb23?action=share&creator=12014982&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Create Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "sku",
+							"value": "BOOK001",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "dvd",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "10",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/products/store",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"store"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success - Create Product",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "sku",
+									"value": "BOOK001",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "dvd",
+									"type": "text"
+								},
+								{
+									"key": "size",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/products/store",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"store"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 18 Jul 2023 12:35:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.6"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"Product created successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Fetch Products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "sku",
+							"value": "BOOK001",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "dvd",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "10",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/products",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success - Fetch Products",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "sku",
+									"value": "BOOK001",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "dvd",
+									"type": "text"
+								},
+								{
+									"key": "size",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/products",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 18 Jul 2023 12:35:54 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.6"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"Products retrieved successfully\",\n    \"data\": [\n        {\n            \"sku\": \"SKU001\",\n            \"name\": \"Product 1\",\n            \"price\": 10,\n            \"type\": \"book\",\n            \"weight\": 2.85\n        },\n        {\n            \"sku\": \"SKU002\",\n            \"name\": \"Product 2\",\n            \"price\": 15,\n            \"type\": \"dvd\",\n            \"size\": 12\n        },\n        {\n            \"sku\": \"SKU003\",\n            \"name\": \"Product 3\",\n            \"price\": 15,\n            \"type\": \"furniture\",\n            \"height\": 10,\n            \"width\": 19,\n            \"length\": 10\n        },\n        {\n            \"sku\": \"SKU004\",\n            \"name\": \"Product 4\",\n            \"price\": 20,\n            \"type\": \"book\",\n            \"weight\": 3.5\n        },\n        {\n            \"sku\": \"SKU005\",\n            \"name\": \"Product 5\",\n            \"price\": 8,\n            \"type\": \"dvd\",\n            \"size\": 8.5\n        },\n        {\n            \"sku\": \"SKU006\",\n            \"name\": \"Product 6\",\n            \"price\": 25,\n            \"type\": \"furniture\",\n            \"height\": 12,\n            \"width\": 24,\n            \"length\": 18\n        },\n        {\n            \"sku\": \"SKU007\",\n            \"name\": \"Product 7\",\n            \"price\": 18,\n            \"type\": \"book\",\n            \"weight\": 4.2\n        },\n        {\n            \"sku\": \"SKU008\",\n            \"name\": \"Product 8\",\n            \"price\": 14,\n            \"type\": \"dvd\",\n            \"size\": 10\n        },\n        {\n            \"sku\": \"SKU009\",\n            \"name\": \"Product 9\",\n            \"price\": 30,\n            \"type\": \"furniture\",\n            \"height\": 15,\n            \"width\": 30,\n            \"length\": 20\n        },\n        {\n            \"sku\": \"SKU010\",\n            \"name\": \"Product 10\",\n            \"price\": 12,\n            \"type\": \"book\",\n            \"weight\": 2\n        },\n        {\n            \"sku\": \"SKU011\",\n            \"name\": \"Product 11\",\n            \"price\": 9,\n            \"type\": \"dvd\",\n            \"size\": 7.5\n        },\n        {\n            \"sku\": \"SKU012\",\n            \"name\": \"Product 12\",\n            \"price\": 22,\n            \"type\": \"furniture\",\n            \"height\": 14,\n            \"width\": 28,\n            \"length\": 16\n        },\n        {\n            \"sku\": \"SKU013\",\n            \"name\": \"Product 13\",\n            \"price\": 16,\n            \"type\": \"book\",\n            \"weight\": 3.8\n        },\n        {\n            \"sku\": \"SKU014\",\n            \"name\": \"Product 14\",\n            \"price\": 11,\n            \"type\": \"dvd\",\n            \"size\": 9\n        },\n        {\n            \"sku\": \"SKU015\",\n            \"name\": \"Product 15\",\n            \"price\": 28,\n            \"type\": \"furniture\",\n            \"height\": 18,\n            \"width\": 36,\n            \"length\": 24\n        },\n        {\n            \"sku\": \"SKU016\",\n            \"name\": \"Product 16\",\n            \"price\": 24,\n            \"type\": \"book\",\n            \"weight\": 3.2\n        },\n        {\n            \"sku\": \"SKU017\",\n            \"name\": \"Product 17\",\n            \"price\": 7,\n            \"type\": \"dvd\",\n            \"size\": 6.5\n        },\n        {\n            \"sku\": \"SKU018\",\n            \"name\": \"Product 18\",\n            \"price\": 20,\n            \"type\": \"furniture\",\n            \"height\": 16,\n            \"width\": 32,\n            \"length\": 22\n        },\n        {\n            \"sku\": \"SKU019\",\n            \"name\": \"Product 19\",\n            \"price\": 13,\n            \"type\": \"book\",\n            \"weight\": 2.5\n        },\n        {\n            \"sku\": \"SKU020\",\n            \"name\": \"Product 20\",\n            \"price\": 10,\n            \"type\": \"dvd\",\n            \"size\": 9.5\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Products",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "_method",
+							"value": "DELETE",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/delete?sku=BOOK001,BOOK002,BOOK003",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "sku",
+							"value": "BOOK001,BOOK002,BOOK003"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success - Delete Products",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "DELETE",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/delete?sku=BOOK001,BOOK002,BOOK003",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "sku",
+									"value": "BOOK001,BOOK002,BOOK003"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 18 Jul 2023 12:36:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.6"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"Product deleted successfully\"\n}"
+				}
+			]
+		}
+	]
+}
