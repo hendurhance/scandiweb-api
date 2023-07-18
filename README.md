@@ -43,7 +43,19 @@ cp .env.example .env
 ```bash
 docker-compose up -d
 ```
-4. Open the application in the browser
+4. Connect to the application container
+```bash
+docker exec -it scandiweb-server-app-1 bash
+```
+5. Go to the application directory
+```bash
+cd /var/www/html
+```
+6. Install dependencies
+```bash
+composer install
+```
+7. Open the application in your browser
 ```bash
 http://localhost:8000/api
 ```
