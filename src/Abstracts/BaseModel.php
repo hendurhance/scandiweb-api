@@ -82,5 +82,16 @@ abstract class BaseModel implements ModelInterface
         $query->execute($ids);
 
         return $query->rowCount();
-    }  
+    }
+    
+    public function deleteByColumn($column, $values)
+    {
+        $values = explode(',', $values);
+        $placeholders = implode(', ', array_fill(0, count($values), '?'));
+
+        $query = $this->connection->prepare("DELETE FROM {$this->table} WHERE {$column} IN ({$placeholders})");
+        $query->execute($values);
+
+        return $query->rowCount();
+    }
 }

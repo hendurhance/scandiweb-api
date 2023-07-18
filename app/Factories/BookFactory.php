@@ -4,8 +4,9 @@ namespace App\Factories;
 
 use App\Enum\ProductTypeEnum;
 use App\Models\Product;
+use Martian\Scandi\Interfaces\FactoryInterface;
 
-class BookFactory implements ProductFactoryInterface
+class BookFactory implements FactoryInterface
 {
     public function create($data)
     {
