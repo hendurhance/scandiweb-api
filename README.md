@@ -12,7 +12,7 @@ Scandiweb Junior Developer Test Task - Backend, using PHP 8.2, MySQL 8.0, and Do
 - [MySQL 8.0](https://dev.mysql.com/downloads/mysql/)
 - [Postman](https://www.postman.com/downloads/)
 
-## Installation
+## Installation Locally
 1. Clone the repository
 ```bash
 git clone https://github.com/hendurhance/scandiweb-api.git
@@ -28,6 +28,24 @@ cp .env.example .env
 4. Run the application
 ```bash
 php -S localhost:8000 -t public
+```
+
+## Installation Using Docker
+1. Clone the repository
+```bash
+git clone https://github.com/hendurhance/scandiweb-api.git
+```
+2. Create a `.env` file from the `.env.example` file
+```bash
+cp .env.example .env
+```
+3. Run the application
+```bash
+docker-compose up -d
+```
+4. Open the application in the browser
+```bash
+http://localhost:8000/api
 ```
 
 
