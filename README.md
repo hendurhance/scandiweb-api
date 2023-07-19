@@ -96,7 +96,7 @@ The application follows the MC (Model-Controller) architecture. The `public/inde
 - `app/Enums` - Contains the application enums
 - `app/Factories` - Contains the application factories for resolving Product types
 - `app/Models` - Contains the application models
-- `app/Repositories` - Contains the application repositories
+- `app/Services` - Contains the application services for handling business logic
 - `app/Requests` - Contains the application requests for validating requests
 - `app/Resources` - Contains the application resources for formatting responses
 - `app/helpers.php` - Contains the application helper functions
