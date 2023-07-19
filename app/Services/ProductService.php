@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Repositories;
+namespace App\Services;
 
 use App\Factories\ProductFactory;
 use App\Models\Product;
 use App\Resources\ProductResource;
-use Martian\Scandi\Interfaces\RepositoryInterface;
+use Martian\Scandi\Interfaces\ServiceInterface;
 
-class ProductRepository implements RepositoryInterface
+class ProductService implements ServiceInterface
 {
     public function create($data)
     {

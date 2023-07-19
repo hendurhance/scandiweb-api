@@ -2,7 +2,7 @@
 
 namespace Martian\Scandi\Interfaces;
 
-interface RepositoryInterface
+interface ServiceInterface
 {
     public function create($data);
     public function update($data);
