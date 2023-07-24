@@ -40,7 +40,7 @@ class Router
 
     private function handleCors()
     {
-        // Allow requests from any origin
+        // Allow requests from  any origin
         header('Access-Control-Allow-Origin: *');
         // Allow specified HTTP methods
         header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
