@@ -304,7 +304,7 @@
 					]
 				},
 				"url": {
-					"raw": "{{BASE_URL}}/api/delete?sku=BOOK001,BOOK002,BOOK003",
+					"raw": "{{BASE_URL}}/api/products/delete?sku=BOOK001,BOOK002,BOOK003",
 					"host": [
 						"{{BASE_URL}}"
 					],
