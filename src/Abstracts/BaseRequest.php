@@ -13,7 +13,7 @@ abstract class BaseRequest implements RequestInterface
 
     public function __construct()
     {
-        $this->requestData = array_merge($_GET, $_POST, $_FILES);
+        $this->requestData = array_merge($_GET, $_POST, $_FILES, file_get_contents('php://input') ? json_decode(file_get_contents('php://input'), true) : []);
     }
 
     public function all()
