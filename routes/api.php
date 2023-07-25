@@ -21,6 +21,6 @@ $router->addRoute('POST', '/api/products/store', function () {
     return (new ProductController())->store();
 });
 
-$router->addRoute('DELETE', '/api/delete', function () {
+$router->addRoute('DELETE', '/api/products/delete', function () {
     return (new ProductController())->destroy();
 });
